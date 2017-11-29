@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.algonquincollege.char1026.hsvcolorpicker.MainActivity">
+
+    <TextView
+        android:id="@+id/colorSwatch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:height="200dp"
+        android:background="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <!--***** Hue *****-->
+
+    <TextView
+        android:id="@+id/hue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/colorSwatch"
+        android:labelFor="@+id/hueSB"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="@string/hue"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"/>
+
+    <FrameLayout
+        android:id="@+id/hueLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hue"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewHue"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:contentDescription="Hue"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_hue" />
+
+        <SeekBar
+            android:id="@+id/hueSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="359" />
+    </FrameLayout>
+
+    <!--***** Saturation *****-->
+
+    <TextView
+        android:id="@+id/saturation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/hueLayout"
+        android:labelFor="@+id/saturationSB"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="@string/saturation"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"/>
+
+    <FrameLayout
+        android:id="@+id/saturationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saturation"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewSaturation"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:contentDescription="Saturation"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_saturation" />
+
+        <SeekBar
+            android:id="@+id/saturationSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="359" />
+    </FrameLayout>
+
+    <!--***** Brightness *****-->
+
+    <TextView
+        android:id="@+id/brightness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/saturationLayout"
+        android:labelFor="@+id/brightnessSB"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="@string/brightness"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp"/>
+
+    <FrameLayout
+        android:id="@+id/brightnessLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/brightness"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewBrightness"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:contentDescription="Brightness"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_brightness" />
+
+        <SeekBar
+            android:id="@+id/brightnessSB"
+            android:layout_width="fill_parent"
+            android:layout_height="32dp"
+            android:max="359" />
+    </FrameLayout>
+
+    <!--***** Color Buttons *****-->
+
+    <HorizontalScrollView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brightnessLayout"
+        android:paddingTop="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:id="@+id/buttonLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/black"
+                style="@style/colorButtons"
+                android:background="@color/colorBlack" />
+
+            <Button
+                android:id="@+id/red"
+                style="@style/colorButtons"
+                android:background="@color/colorRed" />
+
+            <Button
+                android:id="@+id/lime"
+                style="@style/colorButtons"
+                android:background="@color/colorLime" />
+
+            <Button
+                android:id="@+id/blue"
+                style="@style/colorButtons"
+                android:background="@color/colorBlue" />
+
+            <Button
+                android:id="@+id/yellow"
+                style="@style/colorButtons"
+                android:background="@color/colorYellow" />
+
+            <Button
+                android:id="@+id/cyan"
+                style="@style/colorButtons"
+                android:background="@color/colorCyan" />
+
+            <Button
+                android:id="@+id/magenta"
+                style="@style/colorButtons"
+                android:background="@color/colorMagenta" />
+
+            <Button
+                android:id="@+id/silver"
+                style="@style/colorButtons"
+                android:background="@color/colorSilver" />
+
+            <Button
+                android:id="@+id/gray"
+                style="@style/colorButtons"
+                android:background="@color/colorGray" />
+
+            <Button
+                android:id="@+id/maroon"
+                style="@style/colorButtons"
+                android:background="@color/colorMaroon" />
+
+            <Button
+                android:id="@+id/olive"
+                style="@style/colorButtons"
+                android:background="@color/colorOlive" />
+
+            <Button
+                android:id="@+id/green"
+                style="@style/colorButtons"
+                android:background="@color/colorGreen" />
+
+            <Button
+                android:id="@+id/purple"
+                style="@style/colorButtons"
+                android:background="@color/colorPurple" />
+
+            <Button
+                android:id="@+id/teal"
+                style="@style/colorButtons"
+                android:background="@color/colorTeal" />
+
+            <Button
+                android:id="@+id/navy"
+                style="@style/colorButtons"
+                android:background="@color/colorNavy" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</RelativeLayout>
